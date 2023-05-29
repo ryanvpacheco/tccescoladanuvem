@@ -1,11 +1,12 @@
 /* Estilos gerais */
 
+
 /* Definição de estilos para o corpo do documento */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    background-color: #f2f2f2;
 }
 
 /* Container principal */
@@ -16,37 +17,40 @@ body {
 }
 
 /* Estilos para os cards dos participantes */
-.curriculos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
 .curriculo {
-    width: 300px;
+    width: 100%;
     height: 400px;
-    border: 1px solid #ccc;
+    border: none;
     padding: 20px;
     margin-bottom: 20px;
     cursor: pointer;
     perspective: 1000px;
     position: relative;
-    background-color: #337ab7;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform-style: preserve-3d;
     transition: transform 0.3s ease;
 }
 
-.curriculo-card {
+.curriculo:hover,
+.curriculo.flip {
+    transform: rotateY(-180deg);
+}
+
+.curriculo .curriculo-card {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 0.3s ease;
 }
 
-.curriculo-inner {
+.curriculo .curriculo-inner {
     position: relative;
     width: 100%;
     height: 100%;
@@ -54,8 +58,8 @@ body {
     transition: transform 0.3s ease;
 }
 
-.curriculo-front,
-.curriculo-back {
+.curriculo .curriculo-front,
+.curriculo .curriculo-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -64,299 +68,148 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.curriculo-front {
-    transform: rotateY(0deg);
-}
-
-.curriculo-back {
-    transform: rotateY(-180deg);
-}
-
-.curriculo img {
-    max-width: 100%;
-    max-height: 100%;
     border-radius: 8px;
 }
 
-.curriculo-info {
-    padding: 20px;
-    text-align: center;
-    color: white;
-    transform: translateZ(60px);
-    visibility: hidden;
-    opacity: 5;
-    transition: visibility 0s linear 0.3s, opacity 0.3s;
+.curriculo .curriculo-front {
+    background-color: #fcfcfc;
+    transform: rotateY(0deg);
+    z-index: 2;
 }
 
-.curriculo:hover .curriculo-card {
+.curriculo .curriculo-back {
+    background-color: #f9f9f9;
     transform: rotateY(-180deg);
 }
 
-.curriculo:hover .curriculo-info {
-    visibility: visible;
-    opacity: 1;
-    transition: visibility 0s linear 0s, opacity 0.3s;
+.curriculo .curriculo-image {
+    margin-bottom: 20px;
 }
 
+.curriculo .curriculo-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.curriculo .curriculo-info {
+    color: #333;
+}
+
+.curriculo .curriculo-info h2 {
+    font-size: 20px;
+    margin: 5px 0;
+    color: #333;
+}
+
+.curriculo .curriculo-info p {
+    font-size: 14px;
+    margin: 0;
+    color: #666;
+}
+
+/* Barra de navegação */
 .navbar {
     background-color: #337ab7;
     color: #fff;
     padding: 10px 0;
     position: relative;
     overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbar-title {
     margin: 0;
     font-size: 24px;
     text-align: center;
-}
-
-.curriculo-image {
-    text-align: center;
-}
-
-.curriculo-image img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-}
-
-.curriculo-info {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.curriculo-info h2 {
-    font-size: 20px;
-    color: white;
-    margin: 5px 0;
-    visibility: visible;
-}
-
-.curriculo-front h2 {
-    color: white;
-}
-
-/* Estilos das nuvens */
-.navbar {
+    font-family: 'Fredoka One', cursive;
     position: relative;
-    overflow: hidden;
+    z-index: 10;
+    color: #fff;
+    /* Cor da letra branca */
+    font-weight: bold;
+    /* Negrito */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    /* Contorno preto */
+
+    animation: animateText 2s infinite alternate;
 }
 
-.cloud {
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    opacity: 0.8;
-}
 
-/* Estilo da primeira nuvem */
-.cloud-1 {
-    top: -30px;
-    left: -30px;
-    width: 100px;
-    height: 60px;
-}
-
-.cloud-1:before {
-    content: "";
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    top: -20px;
-    left: 40px;
-}
-
-.cloud-1:after {
-    content: "";
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    top: 10px;
-    left: 15px;
-}
-
-/* Estilo da segunda nuvem */
-.cloud-2 {
-    top: 50px;
-    right: -80px;
-    width: 120px;
-    height: 70px;
-}
-
-.cloud-2:before {
-    content: "";
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    top: -30px;
-    left: 0;
-}
-
-.cloud-2:after {
-    content: "";
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    top: 20px;
-    left: 20px;
-}
-
-/* Estilo da terceira nuvem */
-.cloud-3 {
-    bottom: -50px;
-    right: -50px;
-    width: 80px;
-    height: 80px;
-}
-
-.cloud-3:before {
-    content: "";
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    top: -10px;
-    left: 10px;
-}
-
-.cloud-3:after {
-    content: "";
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    top: 10px;
-    left: 30px;
-}
-
-/* Estilo da quarta nuvem */
-.cloud-4 {
-    top: 50px;
-    left: -120px;
-    width: 140px;
-    height: 80px;
-}
-
-.cloud-4:before {
-    content: "";
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    top: -40px;
-    left: 0;
-}
-
-.cloud-4:after {
-    content: "";
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    top: 40px;
-    left: 30px;
-}
-
-/* Estilo da quinta nuvem */
-.cloud-5 {
-    bottom: -70px;
-    left: -80px;
-    width: 100px;
-    height: 100px;
-}
-
-.cloud-5:before {
-    content: "";
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    top: -20px;
-    left: 10px;
-}
-
-.cloud-5:after {
-    content: "";
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    top: 20px;
-    left: 30px;
-}
-
-/* Estilo da sexta nuvem */
-.cloud-6 {
-    top: 100px;
-    right: -120px;
-    width: 160px;
-    height: 90px;
-}
-
-.cloud-6:before {
-    content: "";
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    top: -40px;
-    left: 0;
-}
-
-.cloud-6:after {
-    content: "";
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    top: 20px;
-    left: 30px;
-}
-
-.navbar-title {
-    font-family: "Comic Sans MS", cursive;
-    font-size: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.navbar-cloud,
-.navbar-title {
-    animation: floatClouds 5s ease-in-out infinite alternate;
-}
-
-@keyframes floatClouds {
+@keyframes animateText {
     0% {
-        transform: translateY(0);
+        transform: scale(1);
     }
+
     100% {
-        transform: translateY(-10px);
+        transform: scale(1.1);
     }
+}
+
+
+/* Nuvens flutuantes */
+.cloud {
+    width: 70px;
+    height: 50px;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: rotate(90deg);
+    z-index: 1;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    left: 5px;
+}
+
+.cloud::after {
+    width: 60px;
+    height: 60px;
+    top: -30px;
+    right: 5px;
+}
+
+.cloud-1 {
+    top: 50%;
+    left: 10px;
+    transform: translate(-50%, -50%);
+}
+
+.cloud-2 {
+    top: 50%;
+    right: 10px;
+    transform: translate(50%, -50%);
+}
+
+.cloud-3 {
+    top: 50%;
+    left: -80px;
+    transform: translate(-50%, -50%);
 }
 
 /* Responsividade */
-
-/* Estilos para telas com largura de até 768px */
 @media screen and (max-width: 768px) {
+    .curriculo {
+        width: calc(100% - 40px);
+    }
+
     .curriculos {
         display: flex;
         flex-wrap: wrap;
@@ -364,28 +217,63 @@ body {
         align-items: center;
         gap: 20px;
     }
-  
-    .curriculo {
-        flex-basis: calc(50% - 20px);
+
+    .navbar-title {
+        font-size: 20px;
+    }
+
+    .cloud {
+        width: 50px;
+        height: 40px;
+    }
+
+    .cloud::before {
+        width: 30px;
+        height: 30px;
+        top: -15px;
+        left: 5px;
+    }
+
+    .cloud::after {
+        width: 40px;
+        height: 40px;
+        top: -20px;
+        right: 5px;
     }
 }
 
-/* Estilos para telas com largura acima de 768px */
 @media screen and (min-width: 769px) {
     .curriculos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
     }
-  
-    .curriculo {
-        flex-basis: calc(33.33% - 20px);
+
+    .navbar-title {
+        font-size: 28px;
+    }
+
+    .cloud {
+        width: 70px;
+        height: 50px;
+    }
+
+    .cloud::before {
+        width: 40px;
+        height: 40px;
+        top: -20px;
+        left: 5px;
+    }
+
+    .cloud::after {
+        width: 60px;
+        height: 60px;
+        top: -30px;
+        right: 5px;
     }
 }
 
-/* Estilos para o footer */
+/* Rodapé */
 .footer {
     background-color: #337ab7;
     color: #fff;
@@ -395,4 +283,5 @@ body {
 
 .footer-text {
     font-size: 18px;
+    margin: 0;
 }

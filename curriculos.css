@@ -1,0 +1,277 @@
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Estilos da barra de navegação */
+  .navbar {
+    background-color: #337ab7;
+    padding: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-title {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar ul li {
+    margin-left: 10px;
+  }
+  
+  .navbar ul li:first-child {
+    margin-left: 0;
+  }
+  
+  .navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar ul li a:hover {
+    background-color: #555;
+  }
+  
+  /* Estilos do card do perfil */
+  .profile-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: -20px;
+  }
+  
+  .profile-image-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .profile-info {
+    flex: 1 1 100%;
+  }
+  
+  .profile-info h3 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .profile-info p {
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  /* Estilos das abas */
+  .content {
+    margin-top: 20px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .tab-card {
+    padding: 10px 20px;
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tab-card.active {
+    background-color: #001a66;
+    color: #fff;
+  }
+  
+  .tab-card:hover {
+    background-color: #001a66;
+  }
+  
+  .tab-content {
+    display: none;
+  }
+  
+  .tab-content-title {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .card {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .card ul li {
+    margin-bottom: 5px;
+  }
+  
+  /* Estilos do rodapé */
+  .footer {
+    background-color: #337ab7;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .footer-text {
+    font-size: 18px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  /* Media queries para responsividade */
+  
+  /* Dispositivos menores */
+  @media screen and (max-width: 768px) {
+    .navbar-title {
+      font-size: 1.5rem;
+    }
+  
+    .profile-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .profile-image-circle {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .profile-info {
+      flex-basis: 100%;
+      margin-top: 10px;
+    }
+  
+    .buttons {
+      flex-direction: column;
+    }
+  
+    .tab-card {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    
+    /* Estilos do menu suspenso de participantes */
+    .dropdown {
+      position: relative;
+    }
+    
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    
+    .dropdown-menu li {
+      margin-bottom: 5px;
+    }
+  }
+  
+  /* Dispositivos ainda menores */
+  @media screen and (max-width: 480px) {
+    .navbar ul {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  
+    .navbar ul li {
+      margin-left: 0;
+      margin-bottom: 5px;
+    }
+  
+    .navbar ul li:first-child {
+      margin-top: 5px;
+    }
+  
+    .profile-info h3 {
+      font-size: 1.2rem;
+    }
+  
+    .profile-info p {
+      font-size: 0.9rem;
+    }
+  
+    .tab-card {
+      padding: 8px 16px;
+    }
+  
+    .footer-text {
+      font-size: 14px;
+    }
+  }
+  
+  
