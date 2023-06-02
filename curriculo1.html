@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="curriculos.css">
+    <title>Curriculum</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <!-- Título da Navbar -->
+            <h1 class="navbar-title">TCC ESCOLA DA NUVEM GRUPO 6</h1>
+    
+            <!-- Ícone do Menu (Sanduíche) -->
+            <div class="menu-icon" onclick="redirectToHome()">
+                <div class="menu-icon-line"></div>
+                <div class="menu-icon-line"></div>
+                <div class="menu-icon-line"></div>
+            </div>
+            <!-- Nuvens flutuantes -->
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="profile">
+            <div class="profile-card">
+                <div class="profile-image">
+                    <div class="profile-image-circle">
+                        <img src="img/participante1.jpg" alt="Foto do Participante">
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h3>Nome do Participante</h3>
+                    <p>Perfil pessoal do Participante</p>
+                    <p>Profissão do Participante</p>
+                </div>
+            </div>
+            <!-- Adicione mais perfis de participantes aqui -->
+        </div>
+
+        <div class="content">
+            <div class="buttons">
+                <button class="tab-card active" data-tab="habilidades">Habilidades</button>
+                <button class="tab-card" data-tab="certificacoes">Certificações</button>
+                <button class="tab-card" data-tab="experiencia">Experiência</button>
+                <button class="tab-card" data-tab="formacao">Formação Acadêmica</button>
+            </div>
+
+            <div class="tab-content active" data-tab="habilidades">
+                <div class="tab-content-wrapper">
+                    <div class="card">
+                        <h3 class="tab-content-title">Habilidades</h3>
+                        <ul>
+                            <li>Infraestrutura de Redes</li>
+                            <li>DevOps</li>
+                            <li>Equipamentos e Softwares Cisco</li>
+                            <li>Desenvolvimento de Software</li>
+                            <li>Gerenciamento de Projetos</li>
+                            <li>Melhoria de Processos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" data-tab="certificacoes">
+                <div class="tab-content-wrapper">
+                    <div class="card">
+                        <h3 class="tab-content-title">Certificações</h3>
+                        <ul>
+                            <li>CMNA - Cisco</li>
+                            <li>Meraki Presales Black Belt - Cisco</li>
+                            <li>CC50 - Harvard</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" data-tab="experiencia">
+                <div class="tab-content-wrapper">
+                    <div class="card">
+                        <h3 class="tab-content-title">Experiência</h3>
+                        <ul>
+                            <li>Analista de Suporte Pleno - DC-EXPERT</li>
+                            <li>Analista de Suporte Junior - DC-EXPERT</li>
+                            <li>Estagiário como Analista de Suporte - DC-EXPERT</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" data-tab="formacao">
+                <div class="tab-content-wrapper">
+                    <div class="card">
+                        <h3 class="tab-content-title">Formação Acadêmica</h3>
+                        <ul>
+                            <li>Graduação em Ciência da Computação - Universidade XYZ</li>
+                            <li>Mestrado em Engenharia de Software - Universidade XYZ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer show">
+        <p class="footer-text">&copy; <span>Ryan Pacheco</span> - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="curriculos.js"></script>
+</body>
+</html>

@@ -1,0 +1,451 @@
+/* Estilos gerais */
+
+/* Definição de estilos para o corpo do documento */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color:#f2f2f2;
+}
+
+/* Container principal */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Perfil */
+.profile {
+  margin-top: 70px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-image-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.profile-image-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.profile-info {
+  flex: 1;
+  text-align: center;
+}
+
+.profile-info h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.profile-info p {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  color: #555;
+}
+
+
+.content {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.buttons {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.tab-card {
+  font-size: 1rem;
+  margin: 0.25rem;
+  font-weight: 600;
+  min-width: 200px;
+  min-height: 30px;
+  padding: 1rem 2rem;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-card.active {
+  background-color: #135085;
+  color: #fff;
+}
+
+.tab-card:hover {
+  background-color: #135085;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content-title {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px; /* Defina a largura máxima para telas maiores */
+  background-color: #f9f9f9;;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: justify; /* Alinhar o texto justificado */
+}
+
+.card h3 {
+  font-size: 1.5rem; /* Tamanho do título */
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card ul li {
+  margin-bottom: 5px;
+  font-size: 1.2rem; /* Tamanho dos itens da lista */
+  color: #555;
+}
+.card ul li::before {
+  content: "•";
+  color: #f9f9f9;
+  margin-right: 5px;
+}
+
+
+
+/* Barra de navegação */
+.navbar {
+  background-color: #337ab7;
+  color: #fff;
+  padding: 5px 20px; /* Reduzir o padding vertical */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.navbar-title {
+  margin: 0;
+  font-size: 24px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  color: #fff;
+  /* Cor da letra branca */
+  font-weight: bold;
+  /* Negrito */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  /* Contorno preto */
+
+  animation: animateText 2s infinite alternate;
+}
+
+@keyframes animateText {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* Nuvens flutuantes */
+.cloud {
+  width: 70px;
+  height: 50px;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transform: rotate(90deg);
+  z-index: 1;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 40px;
+  height: 40px;
+  top: -20px;
+  left: 5px;
+}
+
+.cloud::after {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  right: 5px;
+}
+
+.cloud-1 {
+  top: 50%;
+  left: 10px;
+  transform: translate(-50%, -50%);
+}
+
+.cloud-2 {
+  top: 50%;
+  right: 10px;
+  transform: translate(50%, -50%);
+}
+
+.cloud-3 {
+  top: 50%;
+  left: -80px;
+  transform: translate(-50%, -50%);
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .profile {
+    align-items: center;
+  }
+
+  .profile-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-image {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .profile-image img {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .profile-info {
+    width: 100%;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab-card {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar-title {
+    font-size: 20px;
+  }
+
+  .cloud {
+    width: 50px;
+    height: 40px;
+  }
+
+  .cloud::before {
+    width: 30px;
+    height: 30px;
+    top: -15px;
+    left: 5px;
+  }
+
+  .cloud::after {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    right: 5px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .profile {
+    justify-content: center;
+  }
+
+  .profile-card {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .profile-image {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+
+  .profile-image img {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .profile-info {
+    width: auto;
+  }
+
+  .buttons {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .tab-card {
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  .navbar-title {
+    font-size: 20px;
+  }
+
+  .cloud {
+    width: 70px;
+    height: 50px;
+  }
+
+  .cloud::before {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    left: 5px;
+  }
+
+  .cloud::after {
+    width: 60px;
+    height: 60px;
+    top: -30px;
+    right: 5px;
+  }
+}
+
+/* Rodapé */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #337ab7;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Estilos do ícone do menu (sanduíche) */
+.menu-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  right: 2px; /* Ajuste o valor conforme necessário */
+  top: 50%; /* Ajuste o valor conforme necessário */
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-icon-line {
+  width: 100%;
+  height: 2px;
+  background-color: gray;
+  margin-bottom: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-icon:hover,
+.menu-icon:hover .menu-icon-line {
+  background-color: #fff;
+}
+
+.download-button {
+  display: inline-block;
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  padding: 0;
+}
+
+.download-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.download-button:hover img {
+  opacity: 0.8;
+}
