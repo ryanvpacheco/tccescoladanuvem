@@ -13,8 +13,7 @@ body {
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
-  }
-  
+}
 
 /* Estilos para os cards dos participantes */
 .curriculo {
@@ -110,6 +109,11 @@ body {
     color: #666;
 }
 
+/* Estilos para a mensagem de descrição no card */
+.curriculo .curriculo-info-text {
+    display: none;
+}
+
 /* Barra de navegação */
 .navbar {
     background-color: #337ab7;
@@ -127,15 +131,10 @@ body {
     position: relative;
     z-index: 10;
     color: #fff;
-    /* Cor da letra branca */
     font-weight: bold;
-    /* Negrito */
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    /* Contorno preto */
-
     animation: animateText 2s infinite alternate;
 }
-
 
 @keyframes animateText {
     0% {
@@ -201,15 +200,21 @@ body {
 /* Responsividade */
 @media screen and (max-width: 768px) {
     .curriculo {
-        width: calc(100% - 40px);
+        height: 500px;
     }
 
-    .curriculos {
+    .curriculo .curriculo-info-text {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 20px;
+        height: 100%;
+        padding: 10px;
+    }
+
+    .curriculo .curriculo-info-text h2,
+    .curriculo .curriculo-info-text p {
+        margin: 10px 0;
     }
 
     .navbar-title {
