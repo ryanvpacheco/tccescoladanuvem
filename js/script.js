@@ -1,11 +1,13 @@
 // Função para virar o card
 function flipCard(element) {
-  element.classList.add('flip');
+  element.classList.toggle('flip');
 }
 
-// Função para reverter o card
+// Função para reverter o card após 3 segundos de inatividade do mouse ou do toque
 function resetCard(element) {
-  element.classList.remove('flip');
+  if (!element.classList.contains('flip')) {
+    element.classList.add('flip');
+  }
 }
 
 // Função para redirecionar para o currículo ao clicar no card
@@ -33,6 +35,11 @@ curriculos.forEach(function (curriculo) {
       timeout = setTimeout(function () {
         resetCard(cardElement);
       }, 3000);
+    });
+
+    curriculo.addEventListener('touchmove', function () {
+      clearTimeout(timeout);
+      resetCard(cardElement);
     });
   } else {
     curriculo.addEventListener('mouseenter', function () {
