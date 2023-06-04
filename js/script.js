@@ -46,18 +46,20 @@ curriculos.forEach(function (curriculo) {
     });
   }
 
-  curriculo.addEventListener('click', function () {
+  curriculo.addEventListener('click', function (event) {
+    if (isTouchDevice) {
+      event.preventDefault(); // Impede o redirecionamento no toque
+    }
+    flipCard(this);
     redirectToCurriculo(this);
   });
 
   // Função para lidar com o deslize do toque no celular
   function handleTouchSwipe(element) {
-    var swipeThreshold = 50; // Limiar de deslize do toque (ajuste conforme necessário)
+    var swipeThreshold = 10; // Limiar de deslize do toque (ajuste conforme necessário)
     var swipeDistance = touchEnd - touchStart;
-    if (swipeDistance > swipeThreshold) {
+    if (Math.abs(swipeDistance) < swipeThreshold) {
       flipCard(element);
-    } else if (swipeDistance < -swipeThreshold) {
-      resetCard(element);
     }
   }
 });
