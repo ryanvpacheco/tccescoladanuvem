@@ -14,33 +14,38 @@ function redirectToCurriculo(element) {
   window.location.href = curriculoURL;
 }
 
+// Verificar se é um dispositivo com tela sensível ao toque
+var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
+
 // Adicionar eventos de interação aos cards
 var curriculos = document.querySelectorAll('.curriculo');
 curriculos.forEach(function (curriculo) {
   var cardElement = curriculo.querySelector('.curriculo-card');
   var timeout;
 
-  curriculo.addEventListener('mouseenter', function () {
-    flipCard(cardElement);
-    clearTimeout(timeout);
-  });
+  if (isTouchDevice) {
+    curriculo.addEventListener('touchstart', function () {
+      clearTimeout(timeout);
+      flipCard(cardElement);
+    });
 
-  curriculo.addEventListener('mouseleave', function () {
-    timeout = setTimeout(function () {
-      resetCard(cardElement);
-    }, 3000);
-  });
+    curriculo.addEventListener('touchend', function () {
+      timeout = setTimeout(function () {
+        resetCard(cardElement);
+      }, 3000);
+    });
+  } else {
+    curriculo.addEventListener('mouseenter', function () {
+      clearTimeout(timeout);
+      flipCard(cardElement);
+    });
 
-  curriculo.addEventListener('touchstart', function () {
-    flipCard(cardElement);
-    clearTimeout(timeout);
-  });
-
-  curriculo.addEventListener('touchend', function () {
-    timeout = setTimeout(function () {
-      resetCard(cardElement);
-    }, 3000);
-  });
+    curriculo.addEventListener('mouseleave', function () {
+      timeout = setTimeout(function () {
+        resetCard(cardElement);
+      }, 3000);
+    });
+  }
 
   curriculo.addEventListener('click', function () {
     redirectToCurriculo(this);
