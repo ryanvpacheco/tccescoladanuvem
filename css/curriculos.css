@@ -483,3 +483,8 @@ body {
 .download-button:hover img {
   opacity: 0.8;
 }
+
+.footer {
+  display: none;
+  /* Resto dos estilos do footer */
+}

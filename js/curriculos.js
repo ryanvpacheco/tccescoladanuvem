@@ -11,7 +11,6 @@ function showTabContent(tab) {
   // Exibir o conteúdo da aba selecionada
   const selectedContent = document.querySelector(`.tab-content[data-tab="${tab}"]`);
   if (selectedContent) {
-    
     selectedContent.style.display = 'flex';
     scrollToElement(selectedContent.id);
   }
@@ -36,19 +35,80 @@ function closeTabAfterTimeout(tab) {
   let timeout;
   const tabContent = document.querySelector(`.tab-content[data-tab="${tab}"]`);
 
-  // Reiniciar o temporizador a cada interação
-  function resetTimeout() {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      showTabContent('');
-      setActiveTabButton(null);
-    }, 60000); // 1 minuto
-  }
+// Reiniciar o temporizador a cada interação
+function resetTimeout() {
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
+    showTabContent('');
+    setActiveTabButton(null);
+  }, 120000); // 2 minutos
+}
 
   // Adicionar eventos de clique e toque aos botões das abas
   tabContent.addEventListener('click', resetTimeout);
   tabContent.addEventListener('touchstart', resetTimeout);
 }
+
+// Função para redirecionar para a página inicial
+function redirectToHome() {
+  window.location.href = "index.html";
+}
+
+// Função para copiar o texto para a área de transferência e abrir o Google Maps, se necessário
+function copyToClipboard(copiar) {
+  var dummy = document.createElement("input");
+  document.body.appendChild(dummy);
+  dummy.setAttribute('value', copiar);
+  dummy.select();
+  document.execCommand("copy");
+  document.body.removeChild(dummy);
+
+  Swal.fire({
+    icon: 'success',
+    title: (copiar.length) > 20 ? 'Endereço copiado com sucesso!' : copiar,
+    text: (copiar.length) > 20 ? copiar : 'Já copiamos para a sua área de transferência.',
+    showConfirmButton: false,
+    timer: 2500
+  }).then(() => {
+    if ((copiar.length) > 20) {
+      Swal.fire({
+        text: 'Gostaria de ser redirecionado para este endereço no Google Maps?',
+        showCancelButton: true,
+        confirmButtonColor: '#337ab7',
+        cancelButtonColor: '#C70000',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(copiar)}`, '_blank');
+        }
+      });
+    }
+  });
+}
+
+// Função para rolar para um elemento na página
+function scrollToElement(id) {
+  const element = document.getElementById(id);
+  element.scrollIntoView({ behavior: "smooth" });
+}
+
+// Função para verificar se a página foi rolada até o final
+function isPageScrolledToBottom() {
+  return window.innerHeight + window.scrollY >= document.body.offsetHeight;
+}
+
+// Função para exibir ou ocultar o footer com base no scroll da página
+function toggleFooterVisibility() {
+  const footer = document.querySelector('.footer');
+
+  if (isPageScrolledToBottom()) {
+    footer.style.display = 'block';
+  } else {
+    footer.style.display = 'none';
+  }
+}
+
+// Adicionar evento de scroll para verificar o estado do footer
+window.addEventListener('scroll', toggleFooterVisibility);
 
 // Obter todos os botões das abas
 const tabButtons = document.querySelectorAll('.tab-card');
@@ -66,54 +126,10 @@ tabButtons.forEach(button => {
     setActiveTabButton(button);
 
     // Limpar temporizador após clicar em um botão de aba
-    
-
-    // Fechar a aba após 1 minuto de inatividade
     closeTabAfterTimeout(tab);
+
+    // Fechar o footer caso esteja aberto
+    const footer = document.querySelector('.footer');
+    footer.style.display = 'none';
   });
 });
-
-function redirectToHome() {
-  window.location.href = "index.html";
-}
-
-function copyToClipboard(copiar) {
-  var dummy = document.createElement("input");
-  document.body.appendChild(dummy);
-  dummy.setAttribute('value', copiar);
-  dummy.select();
-  document.execCommand("copy");
-  document.body.removeChild(dummy);
-
-  Swal.fire({
-      icon: 'success',
-      title: (copiar.length) > 20 ? 'Endereço copiado com sucesso!' : copiar,
-      text: (copiar.length) > 20 ?  copiar : 'Já copiampos para a sua área de transferência.',
-      showConfirmButton: false,
-      timer: 2500
-  }).then(()=>{
-
-    if ((copiar.length) > 20) {
-      Swal.fire({
-        text: 'Gostaria de ser redirecionado para este endereço no Google Maps?',
-        showCancelButton: true,
-        confirmButtonColor: '#337ab7',
-        cancelButtonColor: '#C70000',
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(copiar)}`, '_blank');
-        }
-      })
-
-    }
-    
-  });
-
-  
-  
-}
-
-function scrollToElement(id) {
-  const element = document.getElementById(id);
-  element.scrollIntoView({behavior: "smooth"});
-}

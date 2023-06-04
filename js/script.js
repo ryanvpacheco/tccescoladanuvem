@@ -1,58 +1,39 @@
-// Função para virar o card
-function flipCard(element) {
-  element.classList.add('flip');
+// Função para girar o card ao ser clicado
+function flipCard(card) {
+  card.classList.toggle("flip");
+
+  // Verifica se o card está girado
+  var isFlipped = card.classList.contains("flip");
+  if (isFlipped) {
+    // Define o tempo de espera em milissegundos
+    var tempoEspera = 3000; // 3 segundos
+
+    // Aplica o timer para reverter o card
+    setTimeout(function() {
+      flipCard(card);
+    }, tempoEspera);
+  }
 }
 
-// Função para reverter o card após 3 segundos de inatividade do mouse ou do toque
-function resetCard(element) {
-  element.classList.remove('flip');
-}
-
-// Função para redirecionar para o currículo ao clicar no card
+// Função para redirecionar para a página do participante ao clicar na foto
 function redirectToCurriculo(element) {
-  var curriculoURL = element.getAttribute('data-href');
-  window.location.href = curriculoURL;
+  var card = element.closest(".curriculo");
+  var url = card.getAttribute("data-href");
+  window.location.href = url;
 }
 
-// Adicionar eventos de interação aos cards
-var curriculos = document.querySelectorAll('.curriculo');
-curriculos.forEach(function (curriculo) {
-  var timeout;
-  var isTouchDevice = false;
+// Adiciona os eventos de clique aos elementos com a classe "curriculo" e "curriculo-image"
+var curriculos = document.querySelectorAll(".curriculo");
+var images = document.querySelectorAll(".curriculo-image");
 
-  // Verificar se é um dispositivo com tela sensível ao toque
-  if ('ontouchstart' in window || navigator.maxTouchPoints) {
-      isTouchDevice = true;
-  }
-
-  // Adicionar eventos de acordo com o tipo de dispositivo
-  if (isTouchDevice) {
-      curriculo.addEventListener('touchstart', function () {
-          flipCard(this);
-      });
-
-      curriculo.addEventListener('touchend', function () {
-          var cardElement = this;
-          clearTimeout(timeout);
-          timeout = setTimeout(function () {
-              resetCard(cardElement);
-          }, 3000);
-      });
-  } else {
-      curriculo.addEventListener('mouseenter', function () {
-          flipCard(this);
-      });
-
-      curriculo.addEventListener('mouseleave', function () {
-          var cardElement = this;
-          clearTimeout(timeout);
-          timeout = setTimeout(function () {
-              resetCard(cardElement);
-          }, 3000);
-      });
-  }
-
-  curriculo.addEventListener('click', function () {
-      redirectToCurriculo(this);
+curriculos.forEach(function(curriculo) {
+  var card = curriculo.querySelector(".curriculo-card");
+  curriculo.addEventListener("click", function(event) {
+    if (event.target.classList.contains("curriculo-image")) {
+      event.stopPropagation();
+      redirectToCurriculo(event.target);
+    } else if (event.target.classList.contains("curriculo") || event.target.classList.contains("curriculo-inner")) {
+      flipCard(card);
+    }
   });
 });

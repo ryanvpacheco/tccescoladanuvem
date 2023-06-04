@@ -1,4 +1,3 @@
-/* Estilos gerais */
 
 /* Definição de estilos para o corpo do documento */
 body {
@@ -38,10 +37,6 @@ body {
     transition: transform 0.3s ease;
 }
 
-.curriculo:hover,
-.curriculo.flip {
-    transform: rotateY(-180deg);
-}
 
 .curriculo .curriculo-card {
     width: 100%;
@@ -279,3 +274,8 @@ body {
     font-size: 18px;
     margin: 0;
 }
+/* Estilo para animar a rotação do card */
+.flip {
+    transform: rotateY(180deg);
+    pointer-events: none;
+  }
