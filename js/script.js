@@ -3,7 +3,7 @@ function flipCard(element) {
   element.classList.add('flip');
 }
 
-// Função para reverter o card após 3 segundos de inatividade do mouse ou do toque
+// Função para reverter o card
 function resetCard(element) {
   element.classList.remove('flip');
 }
@@ -17,42 +17,32 @@ function redirectToCurriculo(element) {
 // Adicionar eventos de interação aos cards
 var curriculos = document.querySelectorAll('.curriculo');
 curriculos.forEach(function (curriculo) {
+  var cardElement = curriculo.querySelector('.curriculo-card');
   var timeout;
-  var isTouchDevice = false;
 
-  // Verificar se é um dispositivo com tela sensível ao toque
-  if ('ontouchstart' in window || navigator.maxTouchPoints) {
-      isTouchDevice = true;
-  }
+  curriculo.addEventListener('mouseenter', function () {
+    flipCard(cardElement);
+    clearTimeout(timeout);
+  });
 
-  // Adicionar eventos de acordo com o tipo de dispositivo
-  if (isTouchDevice) {
-      curriculo.addEventListener('touchstart', function () {
-          flipCard(this);
-      });
+  curriculo.addEventListener('mouseleave', function () {
+    timeout = setTimeout(function () {
+      resetCard(cardElement);
+    }, 3000);
+  });
 
-      curriculo.addEventListener('touchend', function () {
-          var cardElement = this;
-          clearTimeout(timeout);
-          timeout = setTimeout(function () {
-              resetCard(cardElement);
-          }, 3000);
-      });
-  } else {
-      curriculo.addEventListener('mouseenter', function () {
-          flipCard(this);
-      });
+  curriculo.addEventListener('touchstart', function () {
+    flipCard(cardElement);
+    clearTimeout(timeout);
+  });
 
-      curriculo.addEventListener('mouseleave', function () {
-          var cardElement = this;
-          clearTimeout(timeout);
-          timeout = setTimeout(function () {
-              resetCard(cardElement);
-          }, 3000);
-      });
-  }
+  curriculo.addEventListener('touchend', function () {
+    timeout = setTimeout(function () {
+      resetCard(cardElement);
+    }, 3000);
+  });
 
   curriculo.addEventListener('click', function () {
-      redirectToCurriculo(this);
+    redirectToCurriculo(this);
   });
 });
