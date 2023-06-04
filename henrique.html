@@ -28,41 +28,43 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container container-body">
         <div class="profile">
             <div class="profile-card">
+                <a href="curriculos/curriculo_henrique.pdf" download class="download-button">
+                    <img src="img/icons/download.png" alt="Botão de Download">
+                </a>   
                 <div class="profile-image">
                     <div class="profile-image-circle">
                         <img src="img/henrique.jpeg" alt="Foto do Participante">
                     </div>
                 </div>
-                <a href="curriculos/curriculo_henrique.pdf" download class="download-button">
-                    <img src="img/botao.png" alt="Botão de Download">
-                </a>                  
+                               
                 <div class="profile-info">
                     <h3>Henrique Ali Oliveira Alves</h3>
                     <p>Atualmente estou cursando faculdade de Ciência da Computação e estudando para obter a certificação AWS Cloud Practitioner.</p>
-                    <ul>
-                        <li>Telefone: </li></li>
-                        <li>E-mail: <a href="mailto:henriqueali.work@gmail.com">henriqueali.work@gmail.com</a></li>
-                        <li>LinkedIn: <a href="https://www.linkedin.com/in/henrique-ali-7081401b5">https://www.linkedin.com/in/henrique-ali-7081401b5</a></li>
-                        <li>Endereço : Jardim Maria Estela, São Paulo, SP</li>
-                    </ul>
+                    <div class="uls">
+                        <li><a href="#" onclick='copyToClipboard("Jardim Maria Estela, São Paulo, SP")'><img  src="img/icons/mapa.png" alt="Email-button"/></a></li>
+                        <li><a href="#" onclick='copyToClipboard("(11) 9 939330333")''><img  src="img/icons/tel.png" alt="Email-button"/></a></li>
+                        <li><a href="mailto:henriqueali.work@gmail.com"><img  src="img/icons/email.png" alt="Email-button"/></a></li>
+                        <li><a href="https://www.linkedin.com/in/henrique-ali-7081401b5"><img  src="img/icons/linkedin.png" alt="Linkedin-button"/></a></li>
+                        
+                    </div>
                 </div>
             </div>
             <!-- Adicione mais perfis de participantes aqui -->
         </div>
 
-        <div class="content">
+        <div class="content" >
             <div class="buttons">
-                <button class="tab-card active" data-tab="habilidades">Habilidades</button>
-                <button class="tab-card" data-tab="certificacoes">Certificações</button>
-                <button class="tab-card" data-tab="experiencia">Experiência</button>
-                <button class="tab-card" data-tab="formacao">Formação Acadêmica</button>
+                <button class="tab-card active" data-tab="habilidades" >Habilidades</button>
+                <button class="tab-card" data-tab="certificacoes" >Certificações</button>
+                <button class="tab-card" data-tab="experiencia" >Experiência</button>
+                <button class="tab-card" data-tab="formacao" >Formação Acadêmica</button>
             </div>
 
-            <div class="tab-content active" data-tab="habilidades">
-                <div class="tab-content-wrapper">
+            <div class="tab-content active" data-tab="habilidades" id="habilidades">
+                
                     <div class="card">
                         <h3 class="tab-content-title">Habilidades</h3>
                         <ul>
@@ -78,11 +80,11 @@
                             <li>• AWS</li>
                         </ul>
                     </div>
-                </div>
+               
             </div>
 
-            <div class="tab-content" data-tab="certificacoes">
-                <div class="tab-content-wrapper">
+            <div class="tab-content" data-tab="certificacoes" id="certificacoes">
+                
                     <div class="card">
                         <h3 class="tab-content-title">Certificações</h3>
                         <ul>
@@ -96,11 +98,11 @@
                             <li>• Threads em Java 1: programação paralela</li>
                         </ul>
                     </div>
-                </div>
+                
             </div>
 
-            <div class="tab-content" data-tab="experiencia">
-                <div class="tab-content-wrapper">
+            <div class="tab-content" data-tab="experiencia" id="experiencia">
+                
                     <div class="card">
                         <h3 class="tab-content-title">Experiência</h3>
                         <ul>
@@ -119,11 +121,11 @@
                             </ul>
                         </ul>
                     </div>
-                </div>
+               
             </div>
 
-            <div class="tab-content" data-tab="formacao">
-                <div class="tab-content-wrapper">
+            <div class="tab-content" data-tab="formacao" id="formacao">
+                
                     <div class="card">
                         <h3 class="tab-content-title">Formação Acadêmica</h3>
                         <ul>
@@ -133,7 +135,7 @@
 
                         </ul>
                     </div>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -141,7 +143,7 @@
     <footer class="footer show">
         <p class="footer-text">&copy; <span>Ryan Pacheco</span> - Todos os direitos reservados</p>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/curriculos.js"></script>
 </body>
 

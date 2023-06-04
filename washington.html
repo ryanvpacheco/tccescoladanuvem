@@ -28,26 +28,39 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container container-body">
         <div class="profile">
             <div class="profile-card">
+                <a href="curriculos/curriculo_washington.pdf" download class="download-button">
+                    <img src="img/icons/download.png" alt="Botão de Download">
+                </a>
                 <div class="profile-image">
                     <div class="profile-image-circle">
                         <img src="img/washington.jpeg" alt="Foto do Participante">
                     </div>
                 </div>
-                <a href="curriculos/curriculo_henrique.pdf" download class="download-button">
-                    <img src="img/botao.png" alt="Botão de Download">
-                </a>                  
+
                 <div class="profile-info">
                     <h3>Washington Pereira Correia</h3>
-                    <p>Atualmente estou cursando faculdade de Ciência da Computação e estudando para obter a certificação AWS Cloud Practitioner.</p>
-                    <ul>
-                        <li>Telefone: </li></li>
-                        <li>E-mail: <a href="mailto:henriqueali.work@gmail.com">henriqueali.work@gmail.com</a></li>
-                        <li>LinkedIn: <a href="https://www.linkedin.com/in/henrique-ali-7081401b5">https://www.linkedin.com/in/henrique-ali-7081401b5</a></li>
-                        <li>Endereço : Jardim Maria Estela, São Paulo, SP</li>
-                    </ul>
+                    <p>Analista Júnior</p>
+                    <p>
+                        Sendo hoje um analista júnior, atuo especificamente na area de backup, com ferramentas como
+                        Networker, Netbackup, TSM, VEEAM, entre outras. Em busca de agregação curricular e performance
+                        profissional, estou cursando a faculdade de cibersegurança e em paralelo faço o curso de AWS
+                        para
+                        especializar em serviços em nuvem.
+                    </p>
+                    <div class="uls">
+                        <li><a href="#" onclick='copyToClipboard("Matadouro, Nova Lima, MG")'><img
+                                    src="img/icons/mapa.png" alt="Email-button" /></a></li>
+                        <li><a href="#" onclick='copyToClipboard("(31) 9 98785-1174")'><img src="img/icons/tel.png"
+                                    alt="Email-button" /></a></li>
+                        <li><a href="mailto:ton_correia2010@hotmail.com"><img src="img/icons/email.png"
+                                    alt="Email-button" /></a></li>
+                        <li><a href="https://www.linkedin.com/in/washington-correia-7a69ba96/"><img src="img/icons/linkedin.png"
+                                    alt="Linkedin-button" /></a></li>
+
+                    </div>
                 </div>
             </div>
             <!-- Adicione mais perfis de participantes aqui -->
@@ -61,79 +74,88 @@
                 <button class="tab-card" data-tab="formacao">Formação Acadêmica</button>
             </div>
 
-            <div class="tab-content active" data-tab="habilidades">
-                <div class="tab-content-wrapper">
-                    <div class="card">
-                        <h3 class="tab-content-title">Habilidades</h3>
-                        <ul>
-                            <li>• Inglês</li>
-                            <li>• Python</li>
-                            <li>• Java</li>
-                            <li>• Android Studio</li>
-                            <li>• HTML</li>
-                            <li>• CSS</li>
-                            <li>• JavaScript</li>
-                            <li>• Cloud</li>
-                            <li>• MySQL</li>
-                            <li>• AWS</li>
-                        </ul>
-                    </div>
+            <div class="tab-content active" data-tab="habilidades" id="habilidades">
+
+                <div class="card">
+                    <h3 class="tab-content-title">Habilidades</h3>
+                    <ul>
+                        <li>• TSM</li>
+                        <li>• Networker</li>
+                        <li>• Netbackup</li>
+                        <li>• VEEAM</li>
+                        <li>• Cloud</li>
+                        <li>• Pacote Office Básico</li>
+                        <li>• MySQL</li>
+                        <li>• PowerBI Básico</li>
+                    </ul>
                 </div>
+
             </div>
 
-            <div class="tab-content" data-tab="certificacoes">
-                <div class="tab-content-wrapper">
-                    <div class="card">
-                        <h3 class="tab-content-title">Certificações</h3>
-                        <ul>
-                            <li>• Python: começando com a linguagem </li>
-                            <li>• Machine Learning: classificação com SKLearn</li>
-                            <li>• Redes parte 1: conceitos e prática - 10h</li>
-                            <li>• HTTP: Entendendo a web por baixo dos panos</li>
-                            <li>• Java e java.lang: programe com a classe Object e String </li>
-                            <li>• Java e java.util: Coleções, Wrappers e Lambda expressions</li>
-                            <li>• SOLID com Java: princípios da programação orientada a objetos</li>
-                            <li>• Threads em Java 1: programação paralela</li>
-                        </ul>
-                    </div>
+            <div class="tab-content" data-tab="certificacoes" id="certificacoes">
+
+                <div class="card">
+                    <h3 class="tab-content-title">Certificações</h3>
+                    <ul>
+                        <li>• Linux - Introdução ao sistema operacional</li>
+                        <li>• Desenvolvimento Básico em Java</li>
+                        <li>• Shell Script – Manipulando arquivos</li>
+                        <li>• Estrutura de dados e algoritmos</li>
+                        <li>• Introdução ao Git e Github</li>
+                        <li>• Instalação do Linux do zero</li>
+                        <li>• Aplicação do mundo Open_Source</li>
+                        <li>• Executar comandos pelo terminal</li>
+                    </ul>
                 </div>
+
             </div>
 
-            <div class="tab-content" data-tab="experiencia">
-                <div class="tab-content-wrapper">
-                    <div class="card">
-                        <h3 class="tab-content-title">Experiência</h3>
-                        <ul>
+            <div class="tab-content" data-tab="experiencia" id="experiencia">
+
+                <div class="card">
+                    <h3 class="tab-content-title">Experiência</h3>
+
+                    <ul>
+                        <li style="font-weight: bold;">Analista Júnior</li>
+                        <li style="font-size: 0.9em;">Accenture do Brasil - 12/2018 - Atualmente
                             <ul>
-                                <li style="font-weight: bold;">Operador de cobrança - ML GOMES</li>
-                                <li style="font-weight: bold; margin-left: 10px; font-size: 0.9em;">Outubro de 2019 a
-                                    Janeiro de 2020</li>
+                                <li>• Analista de backup - Restore de arquivos solicitados pelo cliente, análises de
+                                    backups diários, semanais, mensais e anuais.</li>
+                                <li>• Realização de troubleshooting; start/stop de jobs de backups.</li>
+                                <li>• Monitoramento de erros de ambientes como: Linux, Banco de Dados, Unix, entre
+                                    outros.</li>
+                                <li>• Atuação no time de resposta rápida.</li>
+                                <li>• Gestão de SLA.</li>
                             </ul>
+                        </li>
+
+                        <li style="font-weight: bold;">Operador de dobradeira</li>
+                        <li style="font-size: 0.9em;">Bigsteel Industria S/A - 06/2014 até 06/2016
                             <ul>
-                                <li>• Realizar o contato com os clientes de forma para realizar cobranças de valores
-                                    pendentes.</li>
-                                <li>• Negociar prazos e condições de pagamento, visando facilitar a regularização das
-                                    pendências.</li>
-                                <li>• Registrar e atualizar as informações de cobrança no sistema interno, mantendo um
-                                    histórico preciso das interações com os clientes.</li>
+                                <li>• Operação de máquinas para produção de aço armado como: Estribadeira, calandra,
+                                    cortadeira.</li>
+                                <li>• Liderança de equipe.</li>
+                                <li>• Leitura e interpretação de desenho técnico.</li>
+                                <li>• Comunicação com o cliente.</li>
+                                <li>• Recebimento de mercadoria.</li>
+                                <li>• Conferência e organização de almoxarifado.</li>
                             </ul>
-                        </ul>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
+
             </div>
 
-            <div class="tab-content" data-tab="formacao">
-                <div class="tab-content-wrapper">
-                    <div class="card">
-                        <h3 class="tab-content-title">Formação Acadêmica</h3>
-                        <ul>
-                            <li>Graduação em Ciência da Computação - Universidade Paulista (UNIP)</li>
-                            <li style="margin-left: 10px; font-size: 0.9em;">Janeiro de 2020 até Dezembro de 2023</li>
-                        </ul>
+            <div class="tab-content" data-tab="formacao" id="formacao">
 
-                        </ul>
-                    </div>
+                <div class="card">
+                    <h3 class="tab-content-title">Formação Acadêmica</h3>
+                    <ul>
+                        <li>Analista em Cibersegurança - Faculdade Pitágoras</li>
+                        <li style="margin-left: 10px; font-size: 0.9em;">Agosto de 2021 até Dezembro de 2023</li>
+                    </ul>
                 </div>
+
             </div>
         </div>
     </div>
@@ -141,7 +163,7 @@
     <footer class="footer show">
         <p class="footer-text">&copy; <span>Ryan Pacheco</span> - Todos os direitos reservados</p>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/curriculos.js"></script>
 </body>
 

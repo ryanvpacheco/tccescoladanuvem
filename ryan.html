@@ -28,112 +28,129 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container container-body">
         <div class="profile">
             <div class="profile-card">
+                <a href="curriculos/curriculo_ryan.pdf" download class="download-button">
+                    <img src="img/icons/download.png" alt="Botão de Download">
+                </a>   
                 <div class="profile-image">
                     <div class="profile-image-circle">
                         <img src="img/ryan.jpeg" alt="Foto do Participante">
                     </div>
                 </div>
-                <a href="curriculos/curriculo_henrique.pdf" download class="download-button">
-                    <img src="img/botao.png" alt="Botão de Download">
-                </a>                  
+                               
                 <div class="profile-info">
                     <h3>Ryan Vitor da Silva Pacheco</h3>
-                    <p>Atualmente estou cursando faculdade de Ciência da Computação e estudando para obter a certificação AWS Cloud Practitioner.</p>
-                    <ul>
-                        <li>Telefone: </li></li>
-                        <li>E-mail: <a href="mailto:henriqueali.work@gmail.com">henriqueali.work@gmail.com</a></li>
-                        <li>LinkedIn: <a href="https://www.linkedin.com/in/henrique-ali-7081401b5">https://www.linkedin.com/in/henrique-ali-7081401b5</a></li>
-                        <li>Endereço : Jardim Maria Estela, São Paulo, SP</li>
-                    </ul>
+                    <p>Desenvolvedor Especializado em Redes</p>
+                    <p>Oi, sou o Ryan, um entusiasta de tecnologia com habilidades avançadas em programação, infraestrutura e me aprimorando em cloud computing. Tenho experiência em administração de sistemas e servidores corporativos, além de conhecimentos em redes e cibersegurança. Estou constantemente buscando aprimorar minhas habilidades e contribuir com soluções inovadoras. Empolgado para fazer parte desse mundo em constante evolução!</p>
+                    <div class="uls">
+                        <li><a href="#" onclick='copyToClipboard(" Av Pedro Henrique Krambeck 150, Juiz de Fora, MG")'><img  src="img/icons/mapa.png" alt="Email-button"/></a></li>
+                        <li><a href="#" onclick='copyToClipboard("(32) 9 9836-2698")'><img  src="img/icons/tel.png" alt="Email-button"/></a></li>
+                        <li><a href="mailto:ryanvpacheco@gmail.com"><img  src="img/icons/email.png" alt="Email-button"/></a></li>
+                        <li><a href="https://www.linkedin.com/in/ryanvpacheco/"><img  src="img/icons/linkedin.png" alt="Linkedin-button"/></a></li>
+                        
+                    </div>
                 </div>
             </div>
             <!-- Adicione mais perfis de participantes aqui -->
         </div>
 
-        <div class="content">
+        <div class="content" >
             <div class="buttons">
-                <button class="tab-card active" data-tab="habilidades">Habilidades</button>
-                <button class="tab-card" data-tab="certificacoes">Certificações</button>
-                <button class="tab-card" data-tab="experiencia">Experiência</button>
-                <button class="tab-card" data-tab="formacao">Formação Acadêmica</button>
+                <button class="tab-card active" data-tab="habilidades" >Habilidades</button>
+                <button class="tab-card" data-tab="certificacoes" >Certificações</button>
+                <button class="tab-card" data-tab="experiencia" >Experiência</button>
+                <button class="tab-card" data-tab="formacao" >Formação Acadêmica</button>
             </div>
 
-            <div class="tab-content active" data-tab="habilidades">
-                <div class="tab-content-wrapper">
+            <div class="tab-content active" data-tab="habilidades" id="habilidades">
+                
                     <div class="card">
                         <h3 class="tab-content-title">Habilidades</h3>
                         <ul>
-                            <li>• Inglês</li>
-                            <li>• Python</li>
-                            <li>• Java</li>
-                            <li>• Android Studio</li>
-                            <li>• HTML</li>
-                            <li>• CSS</li>
-                            <li>• JavaScript</li>
-                            <li>• Cloud</li>
-                            <li>• MySQL</li>
-                            <li>• AWS</li>
+                            <li>• Infraestrutura de Redes</li>
+                            <li>• DevOps</li>
+                            <li>• Equipamentos e softwares</li>
+                            <li>• Cisco</li>
+                            <li>• Desenvolvimento de Software</li>
+                            <li>• Gerenciamento de Projetos</li>
+                            <li>• Melhoria de Processos</li>
                         </ul>
                     </div>
-                </div>
+               
             </div>
 
-            <div class="tab-content" data-tab="certificacoes">
-                <div class="tab-content-wrapper">
+            <div class="tab-content" data-tab="certificacoes" id="certificacoes">
+                
                     <div class="card">
                         <h3 class="tab-content-title">Certificações</h3>
                         <ul>
-                            <li>• Python: começando com a linguagem </li>
-                            <li>• Machine Learning: classificação com SKLearn</li>
-                            <li>• Redes parte 1: conceitos e prática - 10h</li>
-                            <li>• HTTP: Entendendo a web por baixo dos panos</li>
-                            <li>• Java e java.lang: programe com a classe Object e String </li>
-                            <li>• Java e java.util: Coleções, Wrappers e Lambda expressions</li>
-                            <li>• SOLID com Java: princípios da programação orientada a objetos</li>
-                            <li>• Threads em Java 1: programação paralela</li>
+                            <li>• CMNA - Cisco</li>
+                            <li>• Meraki Presales Black Belt - Cisco</li>
+                            <li>• CC50 - Harvard</li>
                         </ul>
                     </div>
-                </div>
+                
             </div>
 
-            <div class="tab-content" data-tab="experiencia">
-                <div class="tab-content-wrapper">
+            <div class="tab-content" data-tab="experiencia" id="experiencia">
+                
                     <div class="card">
                         <h3 class="tab-content-title">Experiência</h3>
-                        <ul>
-                            <ul>
-                                <li style="font-weight: bold;">Operador de cobrança - ML GOMES</li>
-                                <li style="font-weight: bold; margin-left: 10px; font-size: 0.9em;">Outubro de 2019 a
-                                    Janeiro de 2020</li>
-                            </ul>
-                            <ul>
-                                <li>• Realizar o contato com os clientes de forma para realizar cobranças de valores
-                                    pendentes.</li>
-                                <li>• Negociar prazos e condições de pagamento, visando facilitar a regularização das
-                                    pendências.</li>
-                                <li>• Registrar e atualizar as informações de cobrança no sistema interno, mantendo um
-                                    histórico preciso das interações com os clientes.</li>
-                            </ul>
-                        </ul>
+                        <!DOCTYPE html>
+<html>
+<head>
+  <title>Experiência Profissional</title>
+</head>
+<body>
+  <h1>Experiência Profissional</h1>
+  
+  <ul>
+    <li style="font-weight: bold;">Analista de Suporte Pleno</li>
+    <li style="font-size: 0.9em;">DC-EXPERT | fevereiro de 2023 - Present (4 meses)
+      <ul>
+        <li>• Conduzi a coordenação de projetos no dia a dia, planejamento e suporte e manutenção em scripts.</li>
+        <li>• Suporte em equipamentos Cisco e servidores corporativos.</li>
+        <li>• Atualmente estou na função de Analista de Suporte Pleno, exercendo funções de SysAdmin, Analista de Redes, infraestrutura e atendimento ao cliente.</li>
+        <li>• Gerenciamento Cisco Umbrella, Cisco AMP e Cisco Meraki.</li>
+        <li>• Desenvolvimento de API e automações.</li>
+        <li>• Windows, Linux</li>
+        <li>• DevOPS, Cloud e Docker</li>
+      </ul>
+    </li>
+  
+    <li style="font-weight: bold;">Analista de Suporte Junior</li>
+    <li style="font-size: 0.9em;">DC-EXPERT | abril de 2022 - fevereiro de 2023 (11 meses)
+      <ul>
+        <li>• Conduzi a coordenação de projetos no dia a dia, planejamento e suporte e manutenção em scripts.</li>
+        <li>• Suporte em equipamentos Cisco e servidores corporativos.</li>
+      </ul>
+    </li>
+  
+    <li style="font-weight: bold;">Estagiário como Analista de Suporte</li>
+    <li style="font-size: 0.9em;">DC-EXPERT | novembro de 2021 - abril de 2022 (6 meses)</li>
+  </ul>
+  
+</body>
+</html>
+
                     </div>
-                </div>
+               
             </div>
 
-            <div class="tab-content" data-tab="formacao">
-                <div class="tab-content-wrapper">
+            <div class="tab-content" data-tab="formacao" id="formacao">
+                
                     <div class="card">
                         <h3 class="tab-content-title">Formação Acadêmica</h3>
                         <ul>
-                            <li>Graduação em Ciência da Computação - Universidade Paulista (UNIP)</li>
-                            <li style="margin-left: 10px; font-size: 0.9em;">Janeiro de 2020 até Dezembro de 2023</li>
-                        </ul>
-
+                            <li>Graduação em Sistemas de Informação - Universidade Federal de Juiz de Fora - UFJF</li>
+                            <li style="margin-left: 10px; font-size: 0.9em;">Setembro de 2022 até Julho de 2026</li>
+                            <li>Curso Superior de Tecnologia (CST), Redes de Computadores - Estácio</li>
+                            <li style="margin-left: 10px; font-size: 0.9em;">Janeiro de 2023 até Junho de 2025</li>
                         </ul>
                     </div>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -141,7 +158,7 @@
     <footer class="footer show">
         <p class="footer-text">&copy; <span>Ryan Pacheco</span> - Todos os direitos reservados</p>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/curriculos.js"></script>
 </body>
 

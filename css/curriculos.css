@@ -1,5 +1,8 @@
 /* Estilos gerais */
-
+*{
+  
+  text-decoration: none;
+}
 /* Definição de estilos para o corpo do documento */
 body {
   font-family: Arial, sans-serif;
@@ -7,12 +10,35 @@ body {
   padding: 0;
   background-color:#f2f2f2;
 }
+/*aux css */
+.uls{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
 
+.uls img{
+  width: 48px;
+  height: 48px;
+ 
+}
+.uls li{
+  opacity: 0.7;
+}
+
+.uls li:hover{
+  opacity: 1;
+}
 /* Container principal */
 .container {
   max-width: 960px;
   margin: 0 auto;
   padding: 20px;
+}
+.container-body{
+  margin: 2rem auto;
 }
 
 /* Perfil */
@@ -62,7 +88,10 @@ body {
 
 .profile-info {
   flex: 1;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .profile-info h3 {
@@ -72,7 +101,9 @@ body {
 }
 
 .profile-info p {
-  font-size: 1.2rem;
+  text-align: center;
+  max-width: 80%;
+  font-size: 1rem;
   margin-bottom: 0.25rem;
   color: #555;
 }
@@ -80,7 +111,6 @@ body {
 
 .content {
   width: 100%;
-  max-width: 900px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,11 +152,17 @@ body {
 }
 
 .tab-content {
+  margin-top: 0.5rem;
   display: none;
+  width: 100%;
+  min-height: 400px;
+  align-items: center;
+  justify-content: center;
 }
 
 .tab-content.active {
-  display: block;
+  display: flex;
+  
 }
 
 .tab-content-title {
@@ -142,7 +178,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 400px; /* Defina a largura máxima para telas maiores */
+  min-height: 400px;
   background-color: #f9f9f9;;
   padding: 20px;
   border-radius: 8px;
@@ -160,7 +196,7 @@ body {
 .card ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 0 1rem;
 }
 
 .card ul li {
@@ -173,8 +209,6 @@ body {
   color: #f9f9f9;
   margin-right: 5px;
 }
-
-
 
 /* Barra de navegação */
 .navbar {
@@ -337,7 +371,7 @@ body {
   }
 
   .profile-image {
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
     margin-bottom: 0;
   }
 

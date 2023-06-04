@@ -11,7 +11,9 @@ function showTabContent(tab) {
   // Exibir o conteúdo da aba selecionada
   const selectedContent = document.querySelector(`.tab-content[data-tab="${tab}"]`);
   if (selectedContent) {
-    selectedContent.style.display = 'block';
+    
+    selectedContent.style.display = 'flex';
+    scrollToElement(selectedContent.id);
   }
 }
 
@@ -64,7 +66,7 @@ tabButtons.forEach(button => {
     setActiveTabButton(button);
 
     // Limpar temporizador após clicar em um botão de aba
-    clearTimeout(timeout);
+    
 
     // Fechar a aba após 1 minuto de inatividade
     closeTabAfterTimeout(tab);
@@ -73,4 +75,45 @@ tabButtons.forEach(button => {
 
 function redirectToHome() {
   window.location.href = "index.html";
+}
+
+function copyToClipboard(copiar) {
+  var dummy = document.createElement("input");
+  document.body.appendChild(dummy);
+  dummy.setAttribute('value', copiar);
+  dummy.select();
+  document.execCommand("copy");
+  document.body.removeChild(dummy);
+
+  Swal.fire({
+      icon: 'success',
+      title: (copiar.length) > 20 ? 'Endereço copiado com sucesso!' : copiar,
+      text: (copiar.length) > 20 ?  copiar : 'Já copiampos para a sua área de transferência.',
+      showConfirmButton: false,
+      timer: 2500
+  }).then(()=>{
+
+    if ((copiar.length) > 20) {
+      Swal.fire({
+        text: 'Gostaria de ser redirecionado para este endereço no Google Maps?',
+        showCancelButton: true,
+        confirmButtonColor: '#337ab7',
+        cancelButtonColor: '#C70000',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(copiar)}`, '_blank');
+        }
+      })
+
+    }
+    
+  });
+
+  
+  
+}
+
+function scrollToElement(id) {
+  const element = document.getElementById(id);
+  element.scrollIntoView({behavior: "smooth"});
 }

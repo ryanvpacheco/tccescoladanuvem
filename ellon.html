@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/curriculos.css">
+    <title>Elon Musk</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <!-- Título da Navbar -->
+            <h1 class="navbar-title">TCC ESCOLA DA NUVEM GRUPO 6</h1>
+
+            <!-- Ícone do Menu (Sanduíche) -->
+            <div class="menu-icon" onclick="redirectToHome()">
+                <div class="menu-icon-line"></div>
+                <div class="menu-icon-line"></div>
+                <div class="menu-icon-line"></div>
+            </div>
+            <!-- Nuvens flutuantes -->
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+        </div>
+    </nav>
+
+    <div class="container container-body">
+        <div class="profile">
+            <div class="profile-card">
+                <a href="https://static.poder360.com.br/2022/07/meme5-musk-8jul-2022.png" download class="download-button">
+                    <img src="img/icons/download.png" alt="Botão de Download">
+                </a>
+                <div class="profile-image">
+                    <div class="profile-image-circle">
+                        <img src="img/ellon.jpg" alt="Foto do Participante">
+                    </div>
+                </div>
+
+                <div class="profile-info">
+                    <h3>Elon Musk</h3>
+                    <p>Elon Musk é um magnata dos negócios e investidor. Ele é fundador, CEO e engenheiro chefe da SpaceX; investidor anjo, CEO e arquiteto de produtos da Tesla, Inc.; proprietário e CEO do Twitter, Inc.; fundador da The Boring Company; co-fundador da Neuralink e OpenAI; e presidente da Musk Foundation. Musk é a pessoa mais rica do mundo, de acordo com o Bloomberg Billionaires Index, e a segunda pessoa mais rica de acordo com a lista Forbes's Real Time Billionaires em junho de 2023, principalmente devido à sua participação na Tesla e SpaceX, com um patrimônio líquido estimado em cerca de $195 bilhões segundo a Bloomberg e $207.6 bilhões segundo a Forbes.</p>
+                    <div class="uls">
+                        <li><a href="#" onclick='copyToClipboard("Pretória, África do Sul")'><img src="img/icons/mapa.png" alt="Map-button" /></a></li>
+                        <li><a href="#" onclick='copyToClipboard("Nenhum número de telefone disponível")'><img src="img/icons/tel.png" alt="Phone-button" /></a></li>
+                        <li><a href="mailto:elon@spacex.com"><img src="img/icons/email.png" alt="Email-button" /></a></li>
+                        <li><a href="https://www.linkedin.com/company/spacex/"><img src="img/icons/linkedin.png" alt="Linkedin-button" /></a></li>
+                    </div>
+                </div>
+            </div>
+            <!-- Adicione mais perfis de participantes aqui -->
+        </div>
+
+        <div class="content">
+            <div class="buttons">
+                <button class="tab-card active" data-tab="habilidades">Habilidades</button>
+                <button class="tab-card" data-tab="certificacoes">Certificações</button>
+                <button class="tab-card" data-tab="experiencia">Experiência</button>
+                <button class="tab-card" data-tab="formacao">Formação Acadêmica</button>
+            </div>
+
+            <div class="tab-content active" data-tab="habilidades" id="habilidades">
+
+                <div class="card">
+                    <h3 class="tab-content-title">Habilidades</h3>
+                    <ul>
+                        <li>• Empreendedorismo</li>
+                        <li>• Gestão de negócios</li>
+                        <li>• Liderança</li>
+                        <li>• Inovação</li>
+                        <li>• Estratégia empresarial</li>
+                        <li>• Computação em nuvem</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="tab-content" data-tab="certificacoes" id="certificacoes">
+
+                <div class="card">
+                    <h3 class="tab-content-title">Certificações</h3>
+                    <ul>
+                        <li>• Nenhuma certificação específica listada</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="tab-content" data-tab="experiencia" id="experiencia">
+
+                <div class="card">
+                    <h3 class="tab-content-title">Experiência</h3>
+                    <ul>
+                        <ul>
+                            <li style="font-weight: bold;">Fundador, CEO e engenheiro chefe da SpaceX</li>
+                            <li style="font-weight: bold; margin-left: 10px; font-size: 0.9em;">1999 - Presente</li>
+                        </ul>
+                        <ul>
+                            <li>• Investidor anjo, CEO e arquiteto de produtos da Tesla, Inc.</li>
+                            <li>• Proprietário e CEO do Twitter, Inc.</li>
+                            <li>• Fundador da The Boring Company</li>
+                            <li>• Co-fundador da Neuralink e OpenAI</li>
+                            <li>• Presidente da Musk Foundation</li>
+                        </ul>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="tab-content" data-tab="formacao" id="formacao">
+
+                <div class="card">
+                    <h3 class="tab-content-title">Formação Acadêmica</h3>
+                    <ul>
+                        <li>• Waterkloof House Preparatory School</li>
+                        <li>• Bryanston High School</li>
+                        <li>• Pretoria Boys High School</li>
+                        <li>• University of Pretoria (5 meses)</li>
+                        <li>• Queen's University (2 anos)</li>
+                        <li>• University of Pennsylvania (Bacharel em Física e Economia)</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer show">
+        <p class="footer-text">&copy; <span>Ryan Pacheco</span> - Todos os direitos reservados</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/curriculos.js"></script>
+</body>
+
+</html>

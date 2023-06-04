@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/curriculos.css">
+    <title>Jeff</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <!-- Título da Navbar -->
+            <h1 class="navbar-title">TCC ESCOLA DA NUVEM GRUPO 6</h1>
+
+            <!-- Ícone do Menu (Sanduíche) -->
+            <div class="menu-icon" onclick="redirectToHome()">
+                <div class="menu-icon-line"></div>
+                <div class="menu-icon-line"></div>
+                <div class="menu-icon-line"></div>
+            </div>
+            <!-- Nuvens flutuantes -->
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+        </div>
+    </nav>
+
+    <div class="container container-body">
+        <div class="profile">
+            <div class="profile-card">
+                <a href="https://helios-i.mashable.com/imagery/articles/048uqJc0cDAScHgoWp0iIvX/hero-image.fill.size_1248x702.v1614268417.jpg" download class="download-button">
+                    <img src="img/icons/download.png" alt="Botão de Download">
+                </a>
+                <div class="profile-image">
+                    <div class="profile-image-circle">
+                        <img src="img/jeff.jpg" alt="Foto do Participante">
+                    </div>
+                </div>
+
+                <div class="profile-info">
+                    <h3>Jeff Bezos</h3>
+                    <p>Jeff Bezos é um empreendedor, proprietário de mídia, investidor e astronauta comercial americano. Ele é o fundador, presidente executivo e ex-presidente e CEO da Amazon, a maior empresa de comércio eletrônico e computação em nuvem do mundo.</p>
+                    <div class="uls">
+                        <li><a href="#" onclick='copyToClipboard("Albuquerque, Novo México, Estados Unidos")'><img src="img/icons/mapa.png" alt="Map-button" /></a></li>
+                        <li><a href="#" onclick='copyToClipboard("206-266-1000")'><img src="img/icons/tel.png" alt="Phone-button" /></a></li>
+                        <li><a href="mailto:jeff@amazon.com"><img src="img/icons/email.png" alt="Email-button" /></a></li>
+                        <li><a href="https://www.linkedin.com/company/amazon/"><img src="img/icons/linkedin.png" alt="Linkedin-button" /></a></li>
+                    </div>
+                </div>
+            </div>
+            <!-- Adicione mais perfis de participantes aqui -->
+        </div>
+
+        <div class="content">
+            <div class="buttons">
+                <button class="tab-card active" data-tab="habilidades">Habilidades</button>
+                <button class="tab-card" data-tab="certificacoes">Certificações</button>
+                <button class="tab-card" data-tab="experiencia">Experiência</button>
+                <button class="tab-card" data-tab="formacao">Formação Acadêmica</button>
+            </div>
+
+            <div class="tab-content active" data-tab="habilidades" id="habilidades">
+
+                <div class="card">
+                    <h3 class="tab-content-title">Habilidades</h3>
+                    <ul>
+                        <li>• Empreendedorismo</li>
+                        <li>• Gestão de negócios</li>
+                        <li>• Liderança</li>
+                        <li>• Inovação</li>
+                        <li>• Estratégia empresarial</li>
+                        <li>• Computação em nuvem</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="tab-content" data-tab="certificacoes" id="certificacoes">
+
+                <div class="card">
+                    <h3 class="tab-content-title">Certificações</h3>
+                    <ul>
+                        <li>• Nenhuma certificação específica listada</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="tab-content" data-tab="experiencia" id="experiencia">
+
+                <div class="card">
+                    <h3 class="tab-content-title">Experiência</h3>
+                    <ul>
+                        <ul>
+                            <li style="font-weight: bold;">Fundador e presidente executivo da Amazon</li>
+                            <li style="font-weight: bold; margin-left: 10px; font-size: 0.9em;">1994 - Presente</li>
+                        </ul>
+                        <ul>
+                            <li>• Fundador da Blue Origin</li>
+                            <li>• Fundador da Bezos Expeditions</li>
+                        </ul>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="tab-content" data-tab="formacao" id="formacao">
+
+                <div class="card">
+                    <h3 class="tab-content-title">Formação Acadêmica</h3>
+                    <ul>
+                        <li>• Graduação em Engenharia Elétrica, Universidade de Princeton, 1986</li>
+                        <li>• Graduação em Ciência da Computação, Universidade de Princeton, 1986</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer show">
+        <p class="footer-text">&copy; <span>Ryan Pacheco</span> - Todos os direitos reservados</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/curriculos.js"></script>
+</body>
+
+</html>
